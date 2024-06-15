@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import openpyxl
 import io
 
 app = Flask(__name__)
+CORS(app)
 
 
 # calculate difference ratio
@@ -1255,7 +1257,7 @@ def upload_file():
             )
 
             cli_consolidated_niat = calculate_difference_ratio(
-                cli_total_consolidated_net_income,  1507601026
+                cli_total_consolidated_net_income, 1507601026
             )
             cli_parent_niat = calculate_difference_ratio(
                 cli_total_consolidated_net_income, 1507601026
@@ -1487,7 +1489,7 @@ def upload_file():
                 blcbp_total_consolidated_net_income, -20178200
             )
             blcbp_parent_niat = calculate_difference_ratio(
-                blcbp_total_consolidated_net_income,  -20178200
+                blcbp_total_consolidated_net_income, -20178200
             )
 
             blcbp_gpm = round((blcbp_total_gross_profit / blcbp_total_revenue) * 100)
@@ -1708,10 +1710,10 @@ def upload_file():
             )
 
             yes_consolidated_niat = calculate_difference_ratio(
-                yes_total_consolidated_net_income,  5949144
+                yes_total_consolidated_net_income, 5949144
             )
             yes_parent_niat = calculate_difference_ratio(
-                yes_total_consolidated_net_income,  5949144
+                yes_total_consolidated_net_income, 5949144
             )
 
             yes_gpm = round((yes_total_gross_profit / yes_total_revenue) * 100)
